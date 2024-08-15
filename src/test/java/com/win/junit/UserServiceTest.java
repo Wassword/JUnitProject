@@ -4,7 +4,7 @@ import org.example.UserService;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.Mockito.Mock;
+import static org.mockito.Mockito.*;
 import static org.junit.Assert.*;
 
 public class UserServiceTest {
@@ -55,13 +55,21 @@ public class UserServiceTest {
         User result = userService.loginUser("User", "wrongPassword");
         assertNull(result);//edge case
     }
+   //Test methods for updating user profile
     @Test
     public void testUpdateUserProfile_Success(){
         userService.registerUser(testUser);
         boolean result = userService.updateUserProfile(testUser,"newUsername", "newPassword", "newemail@example.com");
         assertTrue(result);
     }
-
+    @Test
+    public void testUpdateUserProfile_UserNameTaken(){
+        User anotherUser = new User("anotherUser", "password456", "anotheruser@example.com");
+        userService.registerUser(testUser);
+        userService.registerUser(anotherUser);
+        boolean result = userService.updateUserProfile(testUser,"newUsername", "newPassword", "newemail@example.com");
+        assertFalse(result);
+    }
 
     @Test
     public void testUpdateUserProfile_NullUser(){
