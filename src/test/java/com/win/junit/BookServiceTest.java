@@ -21,11 +21,15 @@ public class BookServiceTest {
     public void setUp() {
         bookService = new BookService();
         mockUser = mock(User.class);
-        mockBook = new Book("Test Title", "Test Author", "Test Genre");
 
-        //Add mockbook to database for testin
+        // Assuming the Book class has a default constructor
+        mockBook = new Book("Test Title", "Test Author", "Test Genre", 19.99);
+
+
+        // Add the mock book to the database for testing purposes
         bookService.addBook(mockBook);
     }
+
     //test for searching book
     @Test
     public void testSearchBook_Success(){
@@ -55,10 +59,15 @@ public class BookServiceTest {
     }
 
     @Test
-    public void testPurchaseBook_BookNotAvailable(){
-        Book nonExistentBook = new Book("NonExistent Title", "NonExistent Author", "NonExistent Genre");
+    public void testPurchaseBook_BookNotAvailable() {
+        // Creating a Book object with all required constructor arguments
+        Book nonExistentBook = new Book("NonExistent Title", "NonExistent Author", "NonExistent Genre", 29.99);
+
+        // Testing if the purchaseBook method correctly identifies that the book is not available
         boolean result = bookService.purchaseBook(mockUser, nonExistentBook);
-        assertFalse(result);//neg case
+
+        // Asserting that the result is false since the book is not in the database
+        assertFalse(result); // Negative case
     }
 
     @Test
@@ -67,6 +76,7 @@ public class BookServiceTest {
         assertFalse(result);//edge case
 
     }
+    //test for reviews
     @Test
     public void testAddBookReview_Success() {
         when(mockUser.getPurchasedBooks()).thenReturn(List.of(mockBook));
@@ -74,7 +84,16 @@ public class BookServiceTest {
         assertTrue(result); // Positive case
     }
     @Test
+    public void testAddBookReview_UserHasNotPurchasedBook() {
+        when(mockUser.getPurchasedBooks()).thenReturn(List.of(new Book("Test Title", "Test Author", "Test Genre", 19.99)));
+        boolean result = bookService.addBookReview(mockUser, mockBook, "Great Book!");
+        assertFalse(result);//neg case
+    }
+    @Test
     public void testAddBookReview_NullReview() {
+        when(mockUser.getPurchasedBooks()).thenReturn(List.of(mockBook));
+        boolean result = bookService.addBookReview(mockUser, mockBook, null);
+        assertTrue(result);
 
     }
 }

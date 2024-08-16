@@ -5,14 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dca661bb-8877-43d6-a3bc-15dcf7262280" name="Changes" comment="initial commit">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/win/junit/BookServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/win/junit/BookServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/win/junit/BookTest.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/win/junit/UserServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/win/junit/UserServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/win/junit/UserTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,8 +35,12 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "JUnit.BookServiceTest.executor": "Run",
+    "JUnit.BookServiceTest.executor": "Coverage",
+    "JUnit.BookServiceTest.testAddBookReview_NullReview.executor": "Debug",
+    "JUnit.BookServiceTest.testAddBookReview_UserHasNotPurchasedBook.executor": "Run",
+    "JUnit.BookServiceTest.testSearchBook_Success.executor": "Run",
     "JUnit.UserServiceTest.executor": "Run",
+    "JUnit.UserServiceTest.testRegisterUser_NullUser.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "ignore.virus.scanning.warn.message": "true",
@@ -56,8 +55,28 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.BookServiceTest">
+  <component name="RunManager" selected="JUnit.UserServiceTest">
     <configuration name="BookServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JunitProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.win.junit.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+        <pattern>
+          <option name="PATTERN" value="org.example.BookService" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.win.junit" />
+      <option name="MAIN_CLASS_NAME" value="com.win.junit.BookServiceTest" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BookServiceTest.testAddBookReview_UserHasNotPurchasedBook" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="JunitProject" />
       <extension name="coverage">
         <pattern>
@@ -67,7 +86,24 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.win.junit" />
       <option name="MAIN_CLASS_NAME" value="com.win.junit.BookServiceTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="METHOD_NAME" value="testAddBookReview_UserHasNotPurchasedBook" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BookServiceTest.testSearchBook_Success" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JunitProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.win.junit.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.win.junit" />
+      <option name="MAIN_CLASS_NAME" value="com.win.junit.BookServiceTest" />
+      <option name="METHOD_NAME" value="testSearchBook_Success" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -87,6 +123,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="UserServiceTest.testRegisterUser_NullUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JunitProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.win.junit.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.win.junit" />
+      <option name="MAIN_CLASS_NAME" value="com.win.junit.UserServiceTest" />
+      <option name="METHOD_NAME" value="testRegisterUser_NullUser" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <method v="2">
         <option name="Make" enabled="true" />
@@ -100,8 +152,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.BookServiceTest" />
         <item itemvalue="JUnit.UserServiceTest" />
+        <item itemvalue="JUnit.UserServiceTest.testRegisterUser_NullUser" />
+        <item itemvalue="JUnit.BookServiceTest" />
+        <item itemvalue="JUnit.BookServiceTest.testSearchBook_Success" />
+        <item itemvalue="JUnit.BookServiceTest.testAddBookReview_UserHasNotPurchasedBook" />
       </list>
     </recent_temporary>
   </component>
@@ -121,7 +176,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1723727685167</updated>
-      <workItem from="1723727686443" duration="17731000" />
+      <workItem from="1723727686443" duration="22782000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -131,7 +186,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723748419752</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="initial commit">
+      <option name="closed" value="true" />
+      <created>1723754178111</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1723754178111</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -143,5 +206,22 @@
     </ignored-roots>
     <MESSAGE value="initial commit" />
     <option name="LAST_COMMIT_MESSAGE" value="initial commit" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/win/junit/BookServiceTest.java</url>
+          <line>95</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/junitProject$BookServiceTest.ic" NAME="BookServiceTest Coverage Results" MODIFIED="1723760930489" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.win.junit.*</FILTER>
+      <FILTER>org.example.BookService</FILTER>
+    </SUITE>
   </component>
 </project>

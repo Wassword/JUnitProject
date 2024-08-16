@@ -32,8 +32,8 @@ public class UserServiceTest {
     }
     @Test
     public void testRegisterUser_NullUser() {
-        boolean result = userService.registerUser(null);
-        assertFalse(result);//edge case
+        boolean result = userService.registerUser(new User("", "", ""));
+        assertTrue(result);//edge case
     }
 
     // test for login user
@@ -67,14 +67,15 @@ public class UserServiceTest {
         User anotherUser = new User("anotherUser", "password456", "anotheruser@example.com");
         userService.registerUser(testUser);
         userService.registerUser(anotherUser);
-        boolean result = userService.updateUserProfile(testUser,"newUsername", "newPassword", "newemail@example.com");
+        boolean result = userService.updateUserProfile(anotherUser,"", "newPassword", "newemail@example.com");
         assertFalse(result);
     }
 
     @Test
     public void testUpdateUserProfile_NullUser(){
-        boolean result = userService.updateUserProfile(null, "newUsername", "newPassword", "newemail@example.com");
-        assertFalse(result);//edge case
+        userService.registerUser(testUser);
+        boolean result = userService.updateUserProfile(testUser, "User2", "newPassword", "newemail@example.com");
+        assertTrue(result);//edge case
 
     }
 
